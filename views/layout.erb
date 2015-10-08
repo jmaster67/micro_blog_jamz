@@ -1,0 +1,14 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+   <% if flash[:notice] %>
+   	<h1 class="flash-notice">
+   		<%= flash[:notice] %>
+   	</h1>
+   	<% end %>	
+  
+  <%= yield %>
+</body>
+</html>
