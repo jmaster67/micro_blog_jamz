@@ -52,3 +52,18 @@ post "/sign-in" do
   	 redirect '/sign-in' 
     end
   end
+
+  get '/sign-out' do
+  session.clear
+  redirect '/'
+  flash[:notice] = "you have successfully logged out"
+end
+
+get '/posts' do
+  erb :posts
+end
+
+post '/posts' do
+  Post.create(title: params[:title], body: params[:body], user_id:[current_user.id])
+  redirect to('/home')
+end
