@@ -11,7 +11,7 @@ get "/" do
   if session[:user_id]
     @user = User.find(session[:user_id])
   end
-
+  @posts = Post.all
   erb :index
 end
 
@@ -61,9 +61,14 @@ end
 
 get '/posts' do
   erb :posts
+  
 end
 
 post '/posts' do
-  Post.create(title: params[:title], body: params[:body], user_id:[current_user.id])
-  redirect to('/home')
+  Post.create(subject: params[:subject], body: params[:body])
+  redirect to('/')
+end
+
+get "/users/:id" do
+  @user = User.find(params [:id])
 end
