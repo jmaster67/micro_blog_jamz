@@ -48,15 +48,14 @@ post "/sign-in" do
     flash[:notice] = "Get ready to Jatz...."
     redirect '/'
   else
-    flash[:alert] = "Your not quite ready to Jam yet....."
+    flash[:alert] = "Your not quite ready to Jam yet..Try agin!"
   	 redirect '/sign-in' 
     end
   end
 
   get '/sign-out' do
   session.clear
-  redirect '/'
-  flash[:notice] = "you have successfully logged out"
+  redirect '/sign-in'
 end
 
 get '/posts' do
@@ -65,7 +64,7 @@ get '/posts' do
 end
 
 post '/posts' do
-  Post.create(subject: params[:subject], body: params[:body])
+  Post.create(subject: params[:subject], body: params[:body], user_id: session[:user_id])
   redirect to('/')
 end
 

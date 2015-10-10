@@ -1,4 +1,15 @@
 
+
+@font-face {
+    font-family: myFirstFont;
+    src: url('Lakmus.ttff');
+  }
+
+p {
+  font-family: myFirstFont;
+  color: black;
+}
+
 .container {
     width: 500px;
     max-height: 500px;
@@ -24,7 +35,7 @@
     overflow: auto;
 }
 .header {
-    height: 40px;
+    height: 30px;
     border-bottom: 1px solid #EEE;
     background-color: grey;
     height: 200px;
@@ -57,11 +68,11 @@ label, input {
 }
 
 input[type=text], input[type=password] {
-  padding: 5px;
+  padding: 2px;
   width: 300px;
   border-radius: 2px;
   border: 1px solid gray;
-  height: 30px;
+  height: 25px;
 }
 
 input[type=submit] {
@@ -74,7 +85,7 @@ input[type=submit] {
 }
 
 .footer {
-    height: 150px;
+    height: 140px;
     background-color: whiteSmoke;
     border-top: 1px solid #DDD;
     -webkit-border-bottom-left-radius: 5px;
@@ -84,3 +95,62 @@ input[type=submit] {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+#music {
+
+idth: 125px;
+  height: 250px;
+  float: left;
+  padding: 10px;
+  border-radius: 25%;
+
+}
+
+.bounce {
+   height: 50px;  
+   overflow: hidden;
+   position: relative;
+   background: grey;
+   color: white;
+   border: 1px solid black;
+   font-size: 50px
+}
+.bounce p {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   line-height: 50px;
+   text-align: center;
+   /* Starting position */
+   -moz-transform:translateX(50%);
+   -webkit-transform:translateX(50%); 
+   transform:translateX(50%);
+   /* Apply animation to this element */  
+   -moz-animation: bouncing-text 5s linear infinite alternate;
+   -webkit-animation: bouncing-text 5s linear infinite alternate;
+   animation: bouncing-text 5s linear infinite alternate;
+  }
+  /* Move it (define the animation) */
+  @-moz-keyframes bouncing-text {
+   0%   { -moz-transform: translateX(50%); }
+   100% { -moz-transform: translateX(-50%); }
+  }
+  @-webkit-keyframes bouncing-text {
+   0%   { -webkit-transform: translateX(50%); }
+   100% { -webkit-transform: translateX(-50%); }
+  }
+  @keyframes bouncing-text {
+   0%   { 
+   -moz-transform: translateX(50%); /* Browser bug fix */
+   -webkit-transform: translateX(50%); /* Browser bug fix */
+   transform: translateX(50%);    
+   }
+   100% { 
+   -moz-transform: translateX(-50%); /* Browser bug fix */
+   -webkit-transform: translateX(-50%); /* Browser bug fix */
+   transform: translateX(-50%); 
+ }
+
+
+

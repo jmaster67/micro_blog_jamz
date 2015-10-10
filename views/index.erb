@@ -1,3 +1,32 @@
 
 
-<h1> U made it</h1>
+
+<% if session[:user_id] %>
+  <h1>Hi <%= @user.fname.capitalize %> Start a Jatz</h1>
+  <h2><a href="/sign-out">Sign out</a></h2>
+<% else %>
+  <h1><a href="/sign-in">Sign in!</a></h1>
+  <img src="http://dennisdillinger.com/KDimages/Music5.jpg" />
+<% end %>
+
+
+<form action="/posts" method="POST">
+	<div class="postcontents">
+		<input type="text" name="subject" placeholder="Enter post title"><br>
+
+		<textarea name="body" id="posts" cols="100" rows="3" placeholder="What would you like to talk about"></textarea><br>				
+		<input type="submit" name="submit" class="submit-button" />
+</form>
+		
+		
+	</div>
+</form>
+
+<% @posts.each do |post| %>
+<h4><%= post.subject %></h4>
+<h4><%= post.user.fname %></h4>
+<p><%= post.body %></p>
+<% end %>
+
+
+
