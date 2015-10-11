@@ -22,11 +22,13 @@
 	</div>
 </form>
 
-<% @posts.each do |post| %>
+
+<% @posts.reverse_each do |post| %>
 <h4><%= post.subject %></h4>
 <h4><%= post.user.fname %></h4>
 <p><%= post.body %></p>
 <% end %>
+
 
 
 
