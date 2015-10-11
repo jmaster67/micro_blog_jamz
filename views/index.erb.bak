@@ -1,0 +1,16 @@
+
+
+
+<% if session[:user_id] %>
+  <h1>Hi <%= @user.fname.capitalize %></h1>
+  <h1>You have chose to know the truth...</h1>
+  <h2><a href="/sign-out">Sign out</a></h2>
+  <img src="matrix.gif" />
+<% else %>
+  <h1><a href="/sign-in">Sign in!</a></h1>
+  <img src="http://dennisdillinger.com/KDimages/Music5.jpg" />
+<% end %>
+
+<div class="bounce">
+		<p> JATZ.....JATZ.....JATZ</p>
+</div>
