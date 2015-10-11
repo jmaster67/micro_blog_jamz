@@ -1,23 +1,44 @@
+<link rel="stylesheet" type="text/css" href="sign_up.css">
 
-<link rel="stylesheet" type="text/css" href="styles1.css">
-<div id="container">
-    <div class="header"><!--Header--></div>
-    <div class="mainbody">
 
-    	<div id="one"></div>
+<body class="container">
+  <!--Header-->
+  <div class="header">
+    <h1>Jamz</h1>
+    <button class="button">Sign Up</button>
+    <button class="button">Log In</button>
+  </div>
+  <!--Header ends-->
 
-    	<h1> Jamz Login </h1>
+  <!--Body begins-->
+  <div class="mainbody">
 
-<form method="POST" action="/sign-in">   
-	<label for="username">Username</label>   
-	<input type="text" name="username">   
-	<label for="password">Password</label>   
-	<input type="password" name="password">   
-	<input type="submit" value="Click to JAM!!"> 
-</form>
-        <!--<p>Body</p>-->
+    <div class="left-bar"></div>
+    <div class="right-bar"></div>
+
+    <div id="form">
+      <form method="POST" action="/sign-in">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname">
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname">
+        <label for="user_name">User Name</label>
+        <input type="text" name="user_name">
+        <label for="password">Password</label>
+        <input type="text" name="password">
+        <input type="submit" value="Sign Up">
+      </form>
     </div>
-    <div class="footer"><!--Footer--></div>
-</div>
+    <!--Body ends-->
 
-	
+    <!--Footer-->
+    <div class="footer">
+      Copyright © JMast/SPeri 2015
+    </div>
+</body>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script src="sign_up.js"></script>
+</body>
