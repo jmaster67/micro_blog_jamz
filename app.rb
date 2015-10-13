@@ -4,6 +4,7 @@ require './models'
 require 'sinatra/flash'
 
 set :database, "sqlite3:jamz.sqlite3"
+configure(:development){set :database, "sqlite3:jamz.sqlite3"}
 
 enable :sessions
 
