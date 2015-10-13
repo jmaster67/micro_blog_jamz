@@ -70,19 +70,20 @@ label, input {
 input[type=text], input[type=password] {
   padding: 2px;
   width: 300px;
-  border-radius: 2px;
+  border-radius: 10px;
   border: 1px solid gray;
   height: 25px;
 }
 
 input[type=submit] {
   border: none;
-  border-radius: 2px;
+  border-radius: 10px;
   background: red;
   color: white;
   padding: 5px;
   font-size: 14px;
 }
+
 
 .footer {
     height: 140px;
@@ -152,5 +153,24 @@ idth: 125px;
    transform: translateX(-50%); 
  }
 
+ a:link {
+    text-decoration: none;
+}
 
+a:visited {
+    text-decoration: none;
+}
 
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+#posts_index {
+
+  width: 100px;
+  height: 100px;
+}
