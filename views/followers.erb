@@ -1,0 +1,11 @@
+<h1>My Followers</h1>
+<ul>
+  <!--
+    this displays all users assigned to the @users
+    instance variable
+  -->
+  <% @users.each do |user| %>
+    <h2><strong>Id:</strong> <%= user.id %></h2>
+    <li><strong>Email:</strong> <%= user.email %></li>
+  <% end %>
+</ul>

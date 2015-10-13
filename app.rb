@@ -3,8 +3,12 @@ require 'sinatra/activerecord'
 require './models'
 require 'sinatra/flash'
 
+<<<<<<< HEAD
 #set :database, "sqlite3:jamz.sqlite3"
 configure(:development){set :database, "sqlite3:jamz.sqlite3"}
+=======
+set :database, "sqlite3:jamz.sqlite3"
+>>>>>>> parent of 6a47b11... more commits
 
 enable :sessions
 

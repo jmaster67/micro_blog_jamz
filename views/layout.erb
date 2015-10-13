@@ -1,42 +1,34 @@
-<!DOCTYPE html>
 <html>
 <head>
- <title>Jamz</title>
-<link rel="stylesheet" type="text/css" href="sign_up.css"> 
+  <link rel="stylesheet" type="text/css" href="styles1.css">
 </head>
+<body>
+  
+  <div id="container">
+    <div class="header"></div>
+    <div class="mainbody">
+ 
 
-<body class="container">
-	<!-- Header -->
-  <div class="header">
-    <h1>Jamz</h1>
-   
-<!--    <p class="signout">
-     <button>Sign Out</button>
-   </p> -->
- </div>
- <!-- Header ends -->
-
- <div class="mainbody">
-
-    <div class="left-bar"></div>
-    <div class="right-bar"></div>
-
-    <div id="form">
-<!-- 
- <div class="section">
-   <div id="bubbles1"></div>
-
-   <div id="bubbles2"></div>
-    
-   <div id="bubbles3"></div> -->
-     
- </div>
+      <div id="one">
+           <img id="music" src="http://dennisdillinger.com/KDimages/Music5.jpg" />
+      </div>
 
 
-<%= yield %>
 
+   <% if flash[:notice] %>
+   	<h1 class="flash-notice">
+   		<%= flash[:notice] %>
+   	</h1>
+   	<% end %>
+
+   	<% if flash[:alert] %>
+    <h1 class="flash-alert">
+      <%= flash[:alert] %>
+    </h1>
+  <% end %>	
+  
+  <%= yield %>
+
+  
 </body>
-<div class="footer">
-   Copyright © JMast/SPeri 2015
- </footer>
 </html>
