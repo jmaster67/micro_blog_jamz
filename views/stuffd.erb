@@ -1,0 +1,34 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles1.css">
+</head>
+<body>
+  
+  <div id="container">
+    <div class="header"></div>
+    <div class="mainbody">
+ 
+
+      <div id="one">
+           <img id="music" src="http://dennisdillinger.com/KDimages/Music5.jpg" />
+      </div>
+
+
+
+   <% if flash[:notice] %>
+   	<h1 class="flash-notice">
+   		<%= flash[:notice] %>
+   	</h1>
+   	<% end %>
+
+   	<% if flash[:alert] %>
+    <h1 class="flash-alert">
+      <%= flash[:alert] %>
+    </h1>
+  <% end %>	
+  
+  <%= yield %>
+
+  
+</body>
+</html>
