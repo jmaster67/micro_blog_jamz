@@ -2,12 +2,46 @@
 <head>
   <link rel="stylesheet" type="text/css" href="sign_up.css">
 </head>
-<<body class="container">
+<body class="container">
  <!--Header-->
   <div class="header">
     <h1>Jamz</h1>
   </div>
  
+
+<nav>
+    <!-- 
+      this links us to the get routes defined
+      in the app.rb file, notice we only do this when the
+      user is logged in
+    -->
+    
+
+    <a href="/">Login Info</a>
+    <a href="/posts/new">Create a New Post</a>
+    <br>
+    <!-- this goes to the page with all of the logged in user's posts  -->
+    <a href="/posts">My Posts</a>
+    <br>
+    <!-- this goes to the page with all of the user posts of everyone in the system  -->
+    <a href="/posts/all">All Posts</a>
+
+    <!-- this goes to the page with all of the current user's follower's -->
+    <a href="/posts/followers">My Followers' Posts</a>
+
+    <!-- this goes to the page with all of the users of everyone in the system  -->
+    <a href="/users/all">All Users</a>
+
+    <!-- this goes to the page with all of the logged in users followers  -->
+    <a href="/followers">My Followers</a>
+
+    <!-- this goes to the page with all of the users who are following the logged in user  -->
+    <a href="/followees">Users I Follow</a>
+
+    <a href="/logout">Logout</a>
+  </nav>
+
+
  <div class="mainbody">
 
    <div class="left-bar"></div>
@@ -16,9 +50,9 @@
    <div id="form"></div>
 
 
-   <% if flash[:notice] %>
+   <% if flash[:info] %>
     <h1 class="flash-notice">
-      <%= flash[:notice] %>
+      <%= flash[:info] %>
     </h1>
     <% end %>
 
