@@ -15,7 +15,7 @@
       in the app.rb file, notice we only do this when the
       user is logged in
     -->
-    
+    <% if current_user %>
 
     <a href="/">Login Info</a>
     <a href="/posts/new">Create a New Post</a>
@@ -39,6 +39,7 @@
     <a href="/followees">Users I Follow</a>
 
     <a href="/logout">Logout</a>
+    <% end %>
   </nav>
 
 
