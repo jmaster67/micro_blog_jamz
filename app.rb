@@ -2,23 +2,16 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
 require 'sinatra/flash'
-
-
-#set :database, "sqlite3:jamz.sqlite3"
-#configure(:development){set :database, "sqlite3:jamz.sqlite3"}
+require 'pry'
 
 set :database, "sqlite3:jamz.sqlite3"
 
 
 enable :sessions
 
-#get "/posts" do
-  #if session[:user_id]
-    #@user = User.find(session[:user_id])
-  #end
-  #@posts = Post.all
-  #erb :posts
-#end
+get '/' do
+  erb :index
+end
 
 get "/sign-in" do
   erb :sign_in_form
@@ -58,17 +51,16 @@ post "/sign-in" do
     end
   end
 
-  get '/sign-out' do
+  get '/logout' do
   session.clear
   redirect '/sign-in'
 end
 
+get "/users/" do
+  binding.pry
+  @users = User.all
 
-
-get "/users/:id" do
-  @user = User.find(params [:id])
 end
-
 
 # HTTP GET method and "/posts/new" action route
 get "/posts/new" do
@@ -81,9 +73,6 @@ post '/posts' do
   redirect '/posts'
 end
 
-
-
-
 # HTTP GET method and "/posts" action route
 get "/posts" do
   # this loads all the created posts from the database
@@ -94,8 +83,6 @@ get "/posts" do
   # this will output whatever is within the posts.erb template
   erb :posts
 end
-
-
 
 # HTTP GET method and "/posts/followers" action route
 get "/posts/followers" do
@@ -181,8 +168,9 @@ end
 # HTTP GET method and "/followees" action route
 get "/followees" do
   # here we are grabbing all the users that the logged in user is following
-  @users = current_user.followees
-
+  if current_user 
+    @users = current_user.followees
+  end
   # this will output whatever is within the users.erb template
   # notice how this also goes to the posts.erb template
   #   think DRY (Don't Repeat Yourself)
@@ -229,10 +217,6 @@ get "/users/:followee_id/unfollow" do
   #   way to do this
   redirect "/users/all"
 end
-
-
-
-
 
 def current_user
   if session[:user_id]
